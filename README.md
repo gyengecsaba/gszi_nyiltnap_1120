@@ -1,0 +1,1 @@
+# gszi_nyiltnap_1120
