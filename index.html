@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filmfelfedező</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1 class="logo">Film<span>felfedező</span></h1>
+    <form class="search" id="searchForm" autocomplete="off">
+      <input type="search" id="searchInput" placeholder="Keress bármilyen filmet..." aria-label="Film keresése">
+    </form>
+  </header>
+
+  <main>
+    <!-- Keresési eredmények -->
+    <section id="results" class="results hidden">
+      <h2 id="resultsTitle"></h2>
+      <div id="resultsGrid" class="grid"></div>
+    </section>
+
+    <!-- Kategóriák -->
+    <div id="categories">
+      <section class="category">
+        <h2>🔥 Felkapott</h2>
+        <div class="marquee"><div class="track rtl" id="row-trending"></div></div>
+      </section>
+
+      <section class="category">
+        <h2>🏆 Klasszikusok</h2>
+        <div class="marquee"><div class="track ltr" id="row-classic"></div></div>
+      </section>
+
+      <section class="category">
+        <h2>🎲 Ajánlott</h2>
+        <div class="marquee"><div class="track rtl" id="row-recommended"></div></div>
+      </section>
+    </div>
+
+    <p id="error" class="error hidden"></p>
+  </main>
+
+  <footer>
+    Ez a weboldal a TMDB API-t használja, de a TMDB nem támogatja és nem hitelesíti.
+  </footer>
+
+  <!-- Részletek ablak -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="close" id="modalClose" aria-label="Bezárás">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
